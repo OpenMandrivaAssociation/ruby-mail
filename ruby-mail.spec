@@ -1,15 +1,15 @@
 %define gemname mail
 Summary:	A really Ruby Mail handler
-Name:		rubygem-%{gemname}
-Version:	2.4.1
-Release:	2
+Name:		ruby-%{gemname}
+Version:	2.4.4
+Release:	1
 Source0:	http://rubygems.org/downloads/%{gemname}-%{version}.gem
 License:	MIT
 Group:		System/Servers
 Url:		http://www.rubyonrails.org/
-BuildRoot:	%{_tmppath}/%{gemname}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 BuildRequires:	ruby-RubyGems
+%rename		rubygem-%{gemname}
 
 %description
 A really Ruby Mail handler.
@@ -20,14 +20,11 @@ A really Ruby Mail handler.
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 gem install -E -n %{buildroot}%{_bindir} --local --install-dir %{buildroot}/%{ruby_gemdir} --force %{SOURCE0}
 
 rm -rf %{buildroot}%{ruby_gemdir}/cache
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
