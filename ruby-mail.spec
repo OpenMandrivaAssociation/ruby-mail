@@ -2,7 +2,7 @@
 Summary:	A really Ruby Mail handler
 Name:		ruby-%{gemname}
 Version:	2.4.4
-Release:	1
+Release:	2
 Source0:	http://rubygems.org/downloads/%{gemname}-%{version}.gem
 License:	MIT
 Group:		System/Servers
